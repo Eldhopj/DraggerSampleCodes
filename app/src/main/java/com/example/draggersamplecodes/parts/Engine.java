@@ -1,4 +1,4 @@
-package com.example.draggersamplecodes;
+package com.example.draggersamplecodes.parts;
 
 import javax.inject.Inject;
 

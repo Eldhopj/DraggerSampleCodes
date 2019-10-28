@@ -1,4 +1,4 @@
-package com.example.draggersamplecodes;
+package com.example.draggersamplecodes.car;
 
 import dagger.Component;
 
@@ -17,5 +17,4 @@ public interface CarComponent {
      * provision method
      */
     Car getCar();
-
 }
