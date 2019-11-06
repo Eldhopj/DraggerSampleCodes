@@ -27,4 +27,14 @@ public class Car {
     public void drive() {
         Log.d(TAG, "driving...");
     }
+
+    /**
+     * Field injection
+     */
+    // NOTE : its rarely used
+    // Only good use case is that if you have to pass the injected object itself to the dependency
+    @Inject
+    public void enableRemote(Remote remote) { // remote object
+        remote.setListener(this);
+    }
 }
