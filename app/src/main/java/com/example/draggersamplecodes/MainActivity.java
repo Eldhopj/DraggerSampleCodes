@@ -14,10 +14,21 @@ import com.example.draggersamplecodes.car.DaggerCarComponent;
 import javax.inject.Inject;
 
 /**
- * Constructor injection check -> Car class
- * provision method injection -> CarComponent
- * Field injection -> BikeComponent
- * Method injection -> codes inside car package in car, remote
+ * Types of injections :
+ *      1.Constructor injection check -> Car class
+ *      2.provision method injection -> CarComponent
+ *      3.Field injection -> BikeComponent
+ *      4.Method injection -> codes inside car package in car, remote ( very rarely used)
+ *
+ *NOTE : Consider if there are Constructor, field, and method injections,
+ *              The order in which it calls is Constructor injection -> Field injection -> Method injection
+ *
+ * MODULES & PROVIDER METHODS : For the dependency injections we need to annotate the constructor of that class with @Inject,
+ *                              But what if the class which we need is from an external libs?
+ *                              Implementation in Wheels class, in there the constructor in not annotated with @Inject
+ *                              Check : Wheels class and wheels packages
+ *
+ *
  */
 
 public class MainActivity extends AppCompatActivity {

@@ -10,17 +10,18 @@ import javax.inject.Inject;
 public class Car {
     private static final String TAG = "Car";
 
-    //Why not using field injection ? -> we cant make the variables private , it is meant for Framework types,
-    private Engine engine;
+    @Inject
+    Engine engine; // Filed injection
+    //Disadvantage of field injection ? -> we cant make the variables private , it is meant for Framework types,
     private Wheels wheels;
 
     /**
      * Constructor injection
+     * NOTE : In classes like activities we can't do constructor injection because android system initiates them, in those cases use field injection
      */
     //NOTE :if  a class have multiple constructor @Inject can be used only for one constructor
     @Inject // dagger will now know this is the way it has to instantiate the car object
-    public Car(Engine engine, Wheels wheels) {
-        this.engine = engine;
+    public Car(Wheels wheels) {
         this.wheels = wheels;
     }
 
@@ -29,7 +30,7 @@ public class Car {
     }
 
     /**
-     * Field injection
+     * Method injection
      */
     // NOTE : its rarely used
     // Only good use case is that if you have to pass the injected object itself to the dependency

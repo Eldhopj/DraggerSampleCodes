@@ -1,5 +1,7 @@
 package com.example.draggersamplecodes.car;
 
+import com.example.draggersamplecodes.parts.wheels.WheelsModule;
+
 import dagger.Component;
 
 /**
@@ -10,7 +12,8 @@ import dagger.Component;
  * 2. using provision method (getter method)
  */
 
-@Component //dagger will implements this interface and creates all necessary codes at compile time
+@Component(modules = WheelsModule.class)
+//dagger will implements this interface and creates all necessary codes at compile time
 public interface CarComponent {
 
     /**
